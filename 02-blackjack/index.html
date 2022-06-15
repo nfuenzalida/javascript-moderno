@@ -18,10 +18,10 @@
             <button id="btnNuevo" class="btn btn-danger">
                 Nuevo Juego
             </button>
-            <button id="btnPedir" class="btn btn-primary">
+            <button id="btnPedir" class="btn btn-primary" disabled="disabled">
                 Pedir Carta
             </button>
-            <button id="btnDetener" class="btn btn-primary">
+            <button id="btnDetener" class="btn btn-primary" disabled="disabled">
                 Detener
             </button>
         </div>
@@ -35,7 +35,7 @@
                     0
                 </small>
             </h1>
-            <div id="jugador-cartas">
+            <div id="jugador-cartas" class="divCartas">
                 <!-- <img class="carta" src="assets/cartas/2C.png" alt="Carta"> -->
             </div>
         </div>
@@ -49,7 +49,7 @@
                     0
                 </small>
             </h1>
-            <div id="computador-cartas">
+            <div id="computadora-cartas" class="divCartas">
                 <!-- <img class="carta" src="assets/cartas/3C.png" alt="Carta"> -->
             </div>
         </div>
@@ -57,5 +57,16 @@
 
     <script src="assets/js/underscore.min.js"></script>
     <script src="assets/js/juego.js"></script>
+
+    <script>
+    
+        // inicializarJuego();
+        console.log( miModulo );
+
+        document.querySelector('#btnNuevo').addEventListener('click', () => {
+            miModulo.nuevoJuego();
+        })
+    
+    </script>
 </body>
 </html>
