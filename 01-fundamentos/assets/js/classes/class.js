@@ -12,6 +12,7 @@ class Persona {
         console.log('Hola a todos, soy un método stático');
     }
 
+
     nombre = '';
     codigo = '';
     frase  = '';
@@ -24,25 +25,28 @@ class Persona {
         this.frase  = frase;
 
         Persona._conteo++;
+    }
 
-        set setComidaFavorita( comida ) {
-            this.comida = comida.toUpperCase();
-        }
-        get getComidaFavorita() {
-            return `La comida favorita de ${ this.nombre } es ${ this.comida }`;
-        }
+    set setComidaFavorita( comida ) {
+        this.comida = comida.toUpperCase();
+    }
+    get getComidaFavorita() {
+        return `La comida favorita de ${ this.nombre } es ${ this.comida }`;
+    }
 
-        quienSoy(); {
-            console.log(`Soy ${ this.nombre } y mi identidad es ${ this.codigo }`);
-        };
-    
-        miFrase(); {
-            this.quienSoy();
-            console.log(`${ this.codigo} dice: ${ this.frase }`);
-        }
+
+    quienSoy() {
+        console.log(`Soy ${ this.nombre } y mi identidad es ${ this.codigo }`);
+    }
+
+    miFrase() {
+        this.quienSoy();
+        console.log(`${ this.codigo} dice: ${ this.frase }`);
     }
 
 }
+
+
 
 const spiderman = new Persona( 'Peter Parker', 'Spiderman', 'Soy tu amigable vecino Spiderman' );
 const ironman   = new Persona( 'Tony Stark', 'Ironman', 'Yo soy Ironman' );
@@ -55,8 +59,15 @@ spiderman.miFrase();
 spiderman.setComidaFavorita = 'El pie de cereza de la tía May';
 // spiderman.comida = 'Duende Verde';
 
+// console.log( spiderman.getComidaFavorita );
+
 // console.log( spiderman );
 // Persona._conteo = 2;
 console.log('Conteo stático', Persona._conteo );
 console.log( Persona.conteo );
 Persona.mensaje();
+
+Persona.propiedadExterna = 'Hola Mundo';
+
+console.log( Persona.propiedadExterna );
+console.log( Persona );
