@@ -1,4 +1,4 @@
-import { saludar } from './js/componentes';
+import { saludar } from './js/components';
 
 const nombre = 'Nicolas';
 
