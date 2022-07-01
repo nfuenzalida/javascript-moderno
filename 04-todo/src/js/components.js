@@ -25,14 +25,26 @@ export const crearTodoHtml = (todo) => {
 }
 
 txtInput.addEventListener('keyup', (event) => {
-
     if (event.keyCode === 13 && txtInput.value.length > 0) {
-
         console.log(txtInput.value);
         const nuevoTodo = new Todo(txtInput.value);
         todoList.nuevoTodo(nuevoTodo);
 
         crearTodoHtml(nuevoTodo);
         txtInput.value = '';
+    }
+});
+
+divTodoList.addEventListener('click', (event) => {
+    const nombreElemento = event.target.localName; // input, label, button
+    const todoElemento   = event.target.parentElement.parentElement;
+    const todoId         = todoElemento.getAttribute('data-id');
+
+    if (nombreElemento.includes('input')){ // click en el check 
+        todoList.marcarCompletado(todoId);
+        todoElemento.classList.toggle('completed');
+    } else if(nombreElemento.includes('button')) { // hay que borrar el todo
+        todoList.eliminarTodo(todoId);
+        divTodoList.removeChild(todoElemento);
     }
 });
