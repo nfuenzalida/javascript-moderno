@@ -27,7 +27,7 @@ export const crearTodoHtml = (todo) => {
     return div.firstElementChild;
 }
 
-txtInput.addEventListener('keyup', (event) => {
+txtInput.addEventListener('keyup',(event) => {
     if (event.keyCode === 13 && txtInput.value.length > 0) {
         console.log(txtInput.value);
         const nuevoTodo = new Todo(txtInput.value);
@@ -38,7 +38,7 @@ txtInput.addEventListener('keyup', (event) => {
     }
 });
 
-divTodoList.addEventListener('click', (event) => {
+divTodoList.addEventListener('click',(event) => {
     const nombreElemento = event.target.localName; // input, label, button
     const todoElemento   = event.target.parentElement.parentElement;
     const todoId         = todoElemento.getAttribute('data-id');
@@ -52,7 +52,7 @@ divTodoList.addEventListener('click', (event) => {
     }
 });
 
-btnBorrar.addEventListener('click', () => {
+btnBorrar.addEventListener('click',() => {
     todoList.eliminarCompletados();
 
     for( let i = divTodoList.children.length-1; i >= 0; i-- ) {
@@ -63,7 +63,7 @@ btnBorrar.addEventListener('click', () => {
     }
 });
 
-ulFiltros.addEventListener('click', (event) => {
+ulFiltros.addEventListener('click',(event) => {
     const filtro = event.target.text;
     if(!filtro){return;}
 
