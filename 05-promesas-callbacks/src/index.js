@@ -1,13 +1,10 @@
 import './styles.css';
-import {buscarHeroe} from './js/callbacks';
+import {buscarHeroe as buscarHeroeCallbacks} from './js/callbacks';
+import {buscarHeroe} from './js/promesas';
 
 const heroeId = 'capi';
 
 
-buscarHeroe(heroeId,(err,heroe) => {
-    if(err){
-        console.error(err);
-    }else{
-        console.log(heroe);
-    }
+buscarHeroe(heroeId).then(heroe => {
+    console.log(heroe);
 });
