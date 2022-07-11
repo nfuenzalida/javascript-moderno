@@ -1,9 +1,6 @@
-import './styles.css';
-import { promesaLenta,promesaMedia,promesaRapida } from './js/promesas';
+import { heroesCiclo, heroeIfAwait } from './js/await';
 
-//promesaLenta.then(console.log);
-//promesaMedia.then(console.log);
-//promesaRapida.then(console.log);
+heroesCiclo();
+heroeIfAwait('iron');
 
-Promise.race([promesaLenta,promesaMedia,promesaRapida])
-  .then(console.log);
+
