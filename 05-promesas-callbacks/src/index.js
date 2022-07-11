@@ -1,23 +1,9 @@
 import './styles.css';
-import {buscarHeroe as buscarHeroeCallbacks} from './js/callbacks';
-import {buscarHeroe} from './js/promesas';
+import { promesaLenta,promesaMedia,promesaRapida } from './js/promesas';
 
-const heroeId1 = 'capi';
-const heroeId2 = 'iron';
+//promesaLenta.then(console.log);
+//promesaMedia.then(console.log);
+//promesaRapida.then(console.log);
 
-
-buscarHeroe(heroeId1)
-.then(heroe => {
-    console.log(heroe);
-}).catch(err => {
-    alert(err);
-});
-
-Promise.all([buscarHeroe(heroeId1),buscarHeroe(heroeId2)])
-.then(heroes => {
-    console.log('promises.all',heroes);
-}).catch(err =>{
-    alert(err);
-}).finally( () => {
-    console.log('se termino el promises all');
-});
+Promise.race([promesaLenta,promesaMedia,promesaRapida])
+  .then(console.log);
