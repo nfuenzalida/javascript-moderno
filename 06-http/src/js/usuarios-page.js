@@ -34,7 +34,6 @@ const crearHtml = () => {
     tbody = document.querySelector('tbody');
 }
 
-
 // La función crearFilaUsuario debería de recibir un UNICO usuario
 // con la siguiente estructura
     // {
@@ -64,7 +63,6 @@ const crearFilaUsuario = (usuario) => {
     // Añadir el table row (tr) dentro del TBody creado anteriormente
     tbody.appendChild( tr );
 }
-
 
 export const init = async() => {
     crearHtml();

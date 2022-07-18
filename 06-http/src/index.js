@@ -1,6 +1,6 @@
 // import { init } from './js/chistes-page';
- import { init } from './js/usuarios-page';
-// import { init } from './js/archivos-page';
+// import { init } from './js/usuarios-page';
+import { init } from './js/archivos-page';
 
 // import * as CRUD from './js/crud-provider';
 
